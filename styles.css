@@ -1,0 +1,89 @@
+/* 시즌 선택 컨테이너 스타일 */
+
+body {
+    display: flex;
+    justify-content: center;  /* 가로축 중앙 정렬 */
+    align-items: center;      /* 세로축 중앙 정렬 */
+    height: 100vh;            /* 화면 전체 높이 */
+    margin: 0;                /* 기본 여백 제거 */
+    font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+}
+
+
+.season-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 600px;
+    margin: 20px 0;
+}
+
+/* 라디오 버튼 숨기기 */
+.season-container input[type="radio"] {
+    display: none;
+}
+
+/* 라벨 스타일 */
+.season-container label {
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* 이미지 스타일 */
+.season-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 이미지 hover 효과 */
+.season-container img:hover {
+    transform: scale(1.1);
+}
+
+/* 선수 이름 입력창 스타일 */
+.player-name-input {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+/* 입력창 스타일 */
+.player-name-input input {
+    padding: 10px;
+    font-size: 18px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* 결과 스타일 */
+.result {
+    display: none; /* 초기에는 숨김 */
+    text-align: center;
+    font-size: 14px; /* 텍스트 크기를 줄임 */
+    margin-top: 20px; /* 위쪽 여백을 줘서 season-container와 구분 */
+    width: 300px; /* 너비를 설정하여 중앙 정렬이 잘 되도록 함 */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* 버튼 스타일 */
+.result button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.result button:hover {
+    background-color: #45a049;
+}

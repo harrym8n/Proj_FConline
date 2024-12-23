@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 결과</title>
+</head>
+<body>
+    <h1>선수 정보</h1>
+    {% if player_info.error %}
+        <p>오류 발생: {{ player_info.error }}</p>
+    {% else %}
+        <p>선수 이름: {{ player_info.name }}</p>
+        <h3>스탯:</h3>
+        <ul>
+            {% for stat, value in player_info.stats.items() %}
+                <li>{{ stat }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="player_recommend_website.html">다시 검색하기</a>
+</body>
+</html>

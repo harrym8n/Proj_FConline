@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>선수 및 시즌 선택</title>
+</head>
+
+
+<body>
+    <div class="content-wrapper">
+    <!-- 선수 이름 입력 -->
+    <div class="player-name-input">
+        <label for="playerName">선수 이름을 입력하세요:</label>
+        <input type="text" id="playerName" placeholder="선수 이름 입력" oninput="updatePlayerName()">
+    </div>
+<body>
+    <!-- 시즌 아이콘 선택 -->
+    <div class="season-container">
+        <!-- 시즌 아이콘 리스트 -->
+        <input type="radio" id="17 Live" name="season" value="17 Live" onclick="selectSeason('17 Live')">
+        <label for="17 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_17 Live.png" alt="17 Live" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="17-18 Man City Champions" name="season" value="17-18 Man City Champions" onclick="selectSeason('17-18 Man City Champions')">
+        <label for="17-18 Man City Champions" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_17-18 Man City Champions.png" alt="17-18 Man City Champions" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="18 KFA" name="season" value="18 KFA" onclick="selectSeason('18 KFA')">
+        <label for="18 KFA" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_18 KFA.png" alt="18 KFA" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="18 Live" name="season" value="18 Live" onclick="selectSeason('18 Live')">
+        <label for="18 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_18 Live.png" alt="18 Live" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="18 Premium Live Autumn" name="season" value="18 Premium Live Autumn" onclick="selectSeason('18 Premium Live Autumn')">
+        <label for="18 Premium Live Autumn" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_18 Premium Live Autumn.png" alt="18 Premium Live Autumn" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="18 Premium Live Spring" name="season" value="18 Premium Live Spring" onclick="selectSeason('18 Premium Live Spring')">
+        <label for="18 Premium Live Spring" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_18 Premium Live Spring.png" alt="18 Premium Live Spring" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="18 Team Of The Year" name="season" value="18 Team Of The Year" onclick="selectSeason('18 Team Of The Year')">
+        <label for="18 Team Of The Year" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_18 Team Of The Year.png" alt="18 Team Of The Year" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 KFA" name="season" value="19 KFA" onclick="selectSeason('19 KFA')">
+        <label for="19 KFA" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 KFA.png" alt="19 KFA" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 Live" name="season" value="19 Live" onclick="selectSeason('19 Live')">
+        <label for="19 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 Live.png" alt="19 Live" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 New Generation" name="season" value="19 New Generation" onclick="selectSeason('19 New Generation')">
+        <label for="19 New Generation" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 New Generation.png" alt="19 New Generation" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 Premium Live Autumn" name="season" value="19 Premium Live Autumn" onclick="selectSeason('19 Premium Live Autumn')">
+        <label for="19 Premium Live Autumn" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 Premium Live Autumn.png" alt="19 Premium Live Autumn" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 Premium Live Spring" name="season" value="19 Premium Live Spring" onclick="selectSeason('19 Premium Live Spring')">
+        <label for="19 Premium Live Spring" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 Premium Live Spring.png" alt="19 Premium Live Spring" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 Team Of The Season" name="season" value="19 Team Of The Season" onclick="selectSeason('19 Team Of The Season')">
+        <label for="19 Team Of The Season" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 Team Of The Season.png" alt="19 Team Of The Season" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 Team Of The Year" name="season" value="19 Team Of The Year" onclick="selectSeason('19 Team Of The Year')">
+        <label for="19 Team Of The Year" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 Team Of The Year.png" alt="19 Team Of The Year" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="19 UEFA Champions League" name="season" value="19 UEFA Champions League" onclick="selectSeason('19 UEFA Champions League')">
+        <label for="19 UEFA Champions League" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_19 UEFA Champions League.png" alt="19 UEFA Champions League" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 K LEAGUE BEST" name="season" value="20 K LEAGUE BEST" onclick="selectSeason('20 K LEAGUE BEST')">
+        <label for="20 K LEAGUE BEST" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 K LEAGUE BEST.png" alt="20 K LEAGUE BEST" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 K LEAGUE" name="season" value="20 K LEAGUE" onclick="selectSeason('20 K LEAGUE')">
+        <label for="20 K LEAGUE" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 K LEAGUE.png" alt="20 K LEAGUE" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 Live" name="season" value="20 Live" onclick="selectSeason('20 Live')">
+        <label for="20 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 Live.png" alt="20 Live" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 New Generation" name="season" value="20 New Generation" onclick="selectSeason('20 New Generation')">
+        <label for="20 New Generation" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 New Generation.png" alt="20 New Generation" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 Premium Live Autumn" name="season" value="20 Premium Live Autumn" onclick="selectSeason('20 Premium Live Autumn')">
+        <label for="20 Premium Live Autumn" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 Premium Live Autumn.png" alt="20 Premium Live Autumn" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 TOTY Nominated" name="season" value="20 TOTY Nominated" onclick="selectSeason('20 TOTY Nominated')">
+        <label for="20 TOTY Nominated" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 TOTY Nominated.png" alt="20 TOTY Nominated" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 Team Of The Season" name="season" value="20 Team Of The Season" onclick="selectSeason('20 Team Of The Season')">
+        <label for="20 Team Of The Season" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 Team Of The Season.png" alt="20 Team Of The Season" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 Team Of The Year" name="season" value="20 Team Of The Year" onclick="selectSeason('20 Team Of The Year')">
+        <label for="20 Team Of The Year" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 Team Of The Year.png" alt="20 Team Of The Year" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="20 UEFA Champions League" name="season" value="20 UEFA Champions League" onclick="selectSeason('20 UEFA Champions League')">
+        <label for="20 UEFA Champions League" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_20 UEFA Champions League.png" alt="20 UEFA Champions League" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="2012 KH" name="season" value="2012 KH" onclick="selectSeason('2012 KH')">
+        <label for="2012 KH" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_2012 KH.png" alt="2012 KH" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 K LEAGUE BEST" name="season" value="21 K LEAGUE BEST" onclick="selectSeason('21 K LEAGUE BEST')">
+        <label for="21 K LEAGUE BEST" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 K LEAGUE BEST.png" alt="21 K LEAGUE BEST" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 K LEAGUE" name="season" value="21 K LEAGUE" onclick="selectSeason('21 K LEAGUE')">
+        <label for="21 K LEAGUE" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 K LEAGUE.png" alt="21 K LEAGUE" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 KFA" name="season" value="21 KFA" onclick="selectSeason('21 KFA')">
+        <label for="21 KFA" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 KFA.png" alt="21 KFA" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 Live" name="season" value="21 Live" onclick="selectSeason('21 Live')">
+        <label for="21 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 Live.png" alt="21 Live" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 New Generation" name="season" value="21 New Generation" onclick="selectSeason('21 New Generation')">
+        <label for="21 New Generation" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 New Generation.png" alt="21 New Generation" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 Premium Live" name="season" value="21 Premium Live" onclick="selectSeason('21 Premium Live')">
+        <label for="21 Premium Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 Premium Live.png" alt="21 Premium Live" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 TOTY Nominee" name="season" value="21 TOTY Nominee" onclick="selectSeason('21 TOTY Nominee')">
+        <label for="21 TOTY Nominee" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 TOTY Nominee.png" alt="21 TOTY Nominee" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 Team Of The Season" name="season" value="21 Team Of The Season" onclick="selectSeason('21 Team Of The Season')">
+        <label for="21 Team Of The Season" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 Team Of The Season.png" alt="21 Team Of The Season" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 Team Of The Year" name="season" value="21 Team Of The Year" onclick="selectSeason('21 Team Of The Year')">
+        <label for="21 Team Of The Year" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 Team Of The Year.png" alt="21 Team Of The Year" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="21 UEFA Champions League" name="season" value="21 UEFA Champions League" onclick="selectSeason('21 UEFA Champions League')">
+        <label for="21 UEFA Champions League" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_21 UEFA Champions League.png" alt="21 UEFA Champions League" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 HEROES" name="season" value="22 HEROES" onclick="selectSeason('22 HEROES')">
+        <label for="22 HEROES" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 HEROES.png" alt="22 HEROES" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 K LEAGUE BEST" name="season" value="22 K LEAGUE BEST" onclick="selectSeason('22 K LEAGUE BEST')">
+        <label for="22 K LEAGUE BEST" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 K LEAGUE BEST.png" alt="22 K LEAGUE BEST" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 K LEAGUE" name="season" value="22 K LEAGUE" onclick="selectSeason('22 K LEAGUE')">
+        <label for="22 K LEAGUE" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 K LEAGUE.png" alt="22 K LEAGUE" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 KFA" name="season" value="22 KFA" onclick="selectSeason('22 KFA')">
+        <label for="22 KFA" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 KFA.png" alt="22 KFA" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 Live" name="season" value="22 Live" onclick="selectSeason('22 Live')">
+        <label for="22 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 Live.png" alt="22 Live" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 New Generation" name="season" value="22 New Generation" onclick="selectSeason('22 New Generation')">
+        <label for="22 New Generation" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 New Generation.png" alt="22 New Generation" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 Premium Live" name="season" value="22 Premium Live" onclick="selectSeason('22 Premium Live')">
+        <label for="22 Premium Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 Premium Live.png" alt="22 Premium Live" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 TOTY Nominee" name="season" value="22 TOTY Nominee" onclick="selectSeason('22 TOTY Nominee')">
+        <label for="22 TOTY Nominee" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 TOTY Nominee.png" alt="22 TOTY Nominee" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 Team Of The Season" name="season" value="22 Team Of The Season" onclick="selectSeason('22 Team Of The Season')">
+        <label for="22 Team Of The Season" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 Team Of The Season.png" alt="22 Team Of The Season" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 Team Of The Year" name="season" value="22 Team Of The Year" onclick="selectSeason('22 Team Of The Year')">
+        <label for="22 Team Of The Year" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 Team Of The Year.png" alt="22 Team Of The Year" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="22 UEFA Champions League" name="season" value="22 UEFA Champions League" onclick="selectSeason('22 UEFA Champions League')">
+        <label for="22 UEFA Champions League" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_22 UEFA Champions League.png" alt="22 UEFA Champions League" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 HEROES" name="season" value="23 HEROES" onclick="selectSeason('23 HEROES')">
+        <label for="23 HEROES" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 HEROES.png" alt="23 HEROES" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 Hard Worker" name="season" value="23 Hard Worker" onclick="selectSeason('23 Hard Worker')">
+        <label for="23 Hard Worker" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 Hard Worker.png" alt="23 Hard Worker" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 K LEAGUE BEST" name="season" value="23 K LEAGUE BEST" onclick="selectSeason('23 K LEAGUE BEST')">
+        <label for="23 K LEAGUE BEST" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 K LEAGUE BEST.png" alt="23 K LEAGUE BEST" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 K LEAGUE" name="season" value="23 K LEAGUE" onclick="selectSeason('23 K LEAGUE')">
+        <label for="23 K LEAGUE" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 K LEAGUE.png" alt="23 K LEAGUE" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 KFA" name="season" value="23 KFA" onclick="selectSeason('23 KFA')">
+        <label for="23 KFA" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 KFA.png" alt="23 KFA" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 Live" name="season" value="23 Live" onclick="selectSeason('23 Live')">
+        <label for="23 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 Live.png" alt="23 Live" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 New Generation" name="season" value="23 New Generation" onclick="selectSeason('23 New Generation')">
+        <label for="23 New Generation" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 New Generation.png" alt="23 New Generation" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 Premium Live" name="season" value="23 Premium Live" onclick="selectSeason('23 Premium Live')">
+        <label for="23 Premium Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 Premium Live.png" alt="23 Premium Live" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 TOTY Nominee" name="season" value="23 TOTY Nominee" onclick="selectSeason('23 TOTY Nominee')">
+        <label for="23 TOTY Nominee" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 TOTY Nominee.png" alt="23 TOTY Nominee" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 Team Of The Season" name="season" value="23 Team Of The Season" onclick="selectSeason('23 Team Of The Season')">
+        <label for="23 Team Of The Season" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 Team Of The Season.png" alt="23 Team Of The Season" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 Team Of The Year" name="season" value="23 Team Of The Year" onclick="selectSeason('23 Team Of The Year')">
+        <label for="23 Team Of The Year" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 Team Of The Year.png" alt="23 Team Of The Year" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="23 UEFA Champions League" name="season" value="23 UEFA Champions League" onclick="selectSeason('23 UEFA Champions League')">
+        <label for="23 UEFA Champions League" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_23 UEFA Champions League.png" alt="23 UEFA Champions League" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 Energetic Player" name="season" value="24 Energetic Player" onclick="selectSeason('24 Energetic Player')">
+        <label for="24 Energetic Player" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 Energetic Player.png" alt="24 Energetic Player" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 HEROES" name="season" value="24 HEROES" onclick="selectSeason('24 HEROES')">
+        <label for="24 HEROES" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 HEROES.png" alt="24 HEROES" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 K LEAGUE" name="season" value="24 K LEAGUE" onclick="selectSeason('24 K LEAGUE')">
+        <label for="24 K LEAGUE" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 K LEAGUE.png" alt="24 K LEAGUE" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 K League Best" name="season" value="24 K League Best" onclick="selectSeason('24 K League Best')">
+        <label for="24 K League Best" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 K League Best.png" alt="24 K League Best" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 Live" name="season" value="24 Live" onclick="selectSeason('24 Live')">
+        <label for="24 Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 Live.png" alt="24 Live" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 Premium Live" name="season" value="24 Premium Live" onclick="selectSeason('24 Premium Live')">
+        <label for="24 Premium Live" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 Premium Live.png" alt="24 Premium Live" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 TOTY Nominee" name="season" value="24 TOTY Nominee" onclick="selectSeason('24 TOTY Nominee')">
+        <label for="24 TOTY Nominee" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 TOTY Nominee.png" alt="24 TOTY Nominee" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 Team Of The Season" name="season" value="24 Team Of The Season" onclick="selectSeason('24 Team Of The Season')">
+        <label for="24 Team Of The Season" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 Team Of The Season.png" alt="24 Team Of The Season" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="24 Team Of The Year" name="season" value="24 Team Of The Year" onclick="selectSeason('24 Team Of The Year')">
+        <label for="24 Team Of The Year" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_24 Team Of The Year.png" alt="24 Team Of The Year" style="width: auto; height: auto;">
+        </label>
+
+        <input type="radio" id="Back to Back" name="season" value="Back to Back" onclick="selectSeason('Back to Back')">
+        <label for="Back to Back" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Back to Back.png" alt="Back to Back" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Ballon d'Or" name="season" value="Ballon d'Or" onclick="selectSeason('Ballon d\'Or')">
+        <label for="Ballon d'Or" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Ballon d'Or.png" alt="Ballon d'Or" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Best Legends" name="season" value="Best Legends" onclick="selectSeason('Best Legends')">
+        <label for="Best Legends" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Best Legends.png" alt="Best Legends" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Best Of Europe 2021" name="season" value="Best Of Europe 2021" onclick="selectSeason('Best Of Europe 2021')">
+        <label for="Best Of Europe 2021" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Best Of Europe 2021.png" alt="Best Of Europe 2021" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Best of World Cup" name="season" value="Best of World Cup" onclick="selectSeason('Best of World Cup')">
+        <label for="Best of World Cup" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Best of World Cup.png" alt="Best of World Cup" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Captain" name="season" value="Captain" onclick="selectSeason('Captain')">
+        <label for="Captain" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Captain.png" alt="Captain" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Century Club" name="season" value="Century Club" onclick="selectSeason('Century Club')">
+        <label for="Century Club" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Century Club.png" alt="Century Club" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Champions of Europe" name="season" value="Champions of Europe" onclick="selectSeason('Champions of Europe')">
+        <label for="Champions of Europe" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Champions of Europe.png" alt="Champions of Europe" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Chelsea FC Ambassador" name="season" value="Chelsea FC Ambassador" onclick="selectSeason('Chelsea FC Ambassador')">
+        <label for="Chelsea FC Ambassador" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Chelsea FC Ambassador.png" alt="Chelsea FC Ambassador" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Competitor Of Continents" name="season" value="Competitor Of Continents" onclick="selectSeason('Competitor Of Continents')">
+        <label for="Competitor Of Continents" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Competitor Of Continents.png" alt="Competitor Of Continents" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Decade" name="season" value="Decade" onclick="selectSeason('Decade')">
+        <label for="Decade" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Decade.png" alt="Decade" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="European Best Stars" name="season" value="European Best Stars" onclick="selectSeason('European Best Stars')">
+        <label for="European Best Stars" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_European Best Stars.png" alt="European Best Stars" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="FC Ambassador" name="season" value="FC Ambassador" onclick="selectSeason('FC Ambassador')">
+        <label for="FC Ambassador" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_FC Ambassador.png" alt="FC Ambassador" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Free Agent" name="season" value="Free Agent" onclick="selectSeason('Free Agent')">
+        <label for="Free Agent" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Free Agent.png" alt="Free Agent" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Golden Rookies" name="season" value="Golden Rookies" onclick="selectSeason('Golden Rookies')">
+        <label for="Golden Rookies" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Golden Rookies.png" alt="Golden Rookies" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Greatest Runner-Ups" name="season" value="Greatest Runner-Ups" onclick="selectSeason('Greatest Runner-Ups')">
+        <label for="Greatest Runner-Ups" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Greatest Runner-Ups.png" alt="Greatest Runner-Ups" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Heroes Of the Team" name="season" value="Heroes Of the Team" onclick="selectSeason('Heroes Of the Team')">
+        <label for="Heroes Of the Team" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Heroes Of the Team.png" alt="Heroes Of the Team" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Home Grown" name="season" value="Home Grown" onclick="selectSeason('Home Grown')">
+        <label for="Home Grown" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Home Grown.png" alt="Home Grown" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="ICON The Moment Bound" name="season" value="ICON The Moment Bound" onclick="selectSeason('ICON The Moment Bound')">
+        <label for="ICON The Moment Bound" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_ICON The Moment Bound.png" alt="ICON The Moment Bound" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="ICON The Moment" name="season" value="ICON The Moment" onclick="selectSeason('ICON The Moment')">
+        <label for="ICON The Moment" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_ICON The Moment.png" alt="ICON The Moment" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="ICON" name="season" value="ICON" onclick="selectSeason('ICON')">
+        <label for="ICON" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_ICON.png" alt="ICON" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="ICONS MATCH" name="season" value="ICONS MATCH" onclick="selectSeason('ICONS MATCH')">
+        <label for="ICONS MATCH" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_ICONS MATCH.png" alt="ICONS MATCH" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Journeyman" name="season" value="Journeyman" onclick="selectSeason('Journeyman')">
+        <label for="Journeyman" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Journeyman.png" alt="Journeyman" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Juventus Ambassador" name="season" value="Juventus Ambassador" onclick="selectSeason('Juventus Ambassador')">
+        <label for="Juventus Ambassador" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Juventus Ambassador.png" alt="Juventus Ambassador" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Last Dance" name="season" value="Last Dance" onclick="selectSeason('Last Dance')">
+        <label for="Last Dance" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Last Dance.png" alt="Last Dance" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Legend of the Loan" name="season" value="Legend of the Loan" onclick="selectSeason('Legend of the Loan')">
+        <label for="Legend of the Loan" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Legend of the Loan.png" alt="Legend of the Loan" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Legendary Kick Instinct" name="season" value="Legendary Kick Instinct" onclick="selectSeason('Legendary Kick Instinct')">
+        <label for="Legendary Kick Instinct" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Legendary Kick Instinct.png" alt="Legendary Kick Instinct" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Legendary Numbers" name="season" value="Legendary Numbers" onclick="selectSeason('Legendary Numbers')">
+        <label for="Legendary Numbers" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Legendary Numbers.png" alt="Legendary Numbers" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Liverpool F.C. Ambassador" name="season" value="Liverpool F.C. Ambassador" onclick="selectSeason('Liverpool F.C. Ambassador')">
+        <label for="Liverpool F.C. Ambassador" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Liverpool F.C. Ambassador.png" alt="Liverpool F.C. Ambassador" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Loyal Heroes" name="season" value="Loyal Heroes" onclick="selectSeason('Loyal Heroes')">
+        <label for="Loyal Heroes" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Loyal Heroes.png" alt="Loyal Heroes" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Man City ICON" name="season" value="Man City ICON" onclick="selectSeason('Man City ICON')">
+        <label for="Man City ICON" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Man City ICON.png" alt="Man City ICON" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Medalist" name="season" value="Medalist" onclick="selectSeason('Medalist')">
+        <label for="Medalist" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Medalist.png" alt="Medalist" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Moments of Glory" name="season" value="Moments of Glory" onclick="selectSeason('Moments of Glory')">
+        <label for="Moments of Glory" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Moments of Glory.png" alt="Moments of Glory" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Multi-League Champions" name="season" value="Multi-League Champions" onclick="selectSeason('Multi-League Champions')">
+        <label for="Multi-League Champions" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Multi-League Champions.png" alt="Multi-League Champions" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="National Hero Debut" name="season" value="National Hero Debut" onclick="selectSeason('National Hero Debut')">
+        <label for="National Hero Debut" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_National Hero Debut.png" alt="National Hero Debut" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Nostalgia" name="season" value="Nostalgia" onclick="selectSeason('Nostalgia')">
+        <label for="Nostalgia" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Nostalgia.png" alt="Nostalgia" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Ones To Watch" name="season" value="Ones To Watch" onclick="selectSeason('Ones To Watch')">
+        <label for="Ones To Watch" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Ones To Watch.png" alt="Ones To Watch" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Real Madrid CF Ambassador" name="season" value="Real Madrid CF Ambassador" onclick="selectSeason('Real Madrid CF Ambassador')">
+        <label for="Real Madrid CF Ambassador" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Real Madrid CF Ambassador.png" alt="Real Madrid CF Ambassador" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Returnees" name="season" value="Returnees" onclick="selectSeason('Returnees')">
+        <label for="Returnees" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Returnees.png" alt="Returnees" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Spotlight" name="season" value="Spotlight" onclick="selectSeason('Spotlight')">
+        <label for="Spotlight" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Spotlight.png" alt="Spotlight" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Team K LEAGUE" name="season" value="Team K LEAGUE" onclick="selectSeason('Team K LEAGUE')">
+        <label for="Team K LEAGUE" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Team K LEAGUE.png" alt="Team K LEAGUE" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Team Korea Icon" name="season" value="Team Korea Icon" onclick="selectSeason('Team Korea Icon')">
+        <label for="Team Korea Icon" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Team Korea Icon.png" alt="Team Korea Icon" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Top Transfer" name="season" value="Top Transfer" onclick="selectSeason('Top Transfer')">
+        <label for="Top Transfer" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Top Transfer.png" alt="Top Transfer" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Tournament Best" name="season" value="Tournament Best" onclick="selectSeason('Tournament Best')">
+        <label for="Tournament Best" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Tournament Best.png" alt="Tournament Best" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Tournament Champions" name="season" value="Tournament Champions" onclick="selectSeason('Tournament Champions')">
+        <label for="Tournament Champions" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Tournament Champions.png" alt="Tournament Champions" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="UEFA EURO 2024" name="season" value="UEFA EURO 2024" onclick="selectSeason('UEFA EURO 2024')">
+        <label for="UEFA EURO 2024" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_UEFA EURO 2024.png" alt="UEFA EURO 2024" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Unexpected Transfer" name="season" value="Unexpected Transfer" onclick="selectSeason('Unexpected Transfer')">
+        <label for="Unexpected Transfer" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Unexpected Transfer.png" alt="Unexpected Transfer" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Unsung Players" name="season" value="Unsung Players" onclick="selectSeason('Unsung Players')">
+        <label for="Unsung Players" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Unsung Players.png" alt="Unsung Players" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="Veteran" name="season" value="Veteran" onclick="selectSeason('Veteran')">
+        <label for="Veteran" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_Veteran.png" alt="Veteran" style="width: auto; height: auto;">
+        </label>
+        
+        <input type="radio" id="World Cup 2022" name="season" value="World Cup 2022" onclick="selectSeason('World Cup 2022')">
+        <label for="World Cup 2022" style="width: auto; height: auto;">
+            <img src="./season_logo/logo_World Cup 2022.png" alt="World Cup 2022" style="width: auto; height: auto;">
+        </label>
+
+    
+
+ <!-- 결과 표시 영역 -->
+ <div class="result" id="result">
+    <p>선수: <span id="selectedPlayer"></span></p>
+    <p>시즌: <span id="selectedSeason"></span></p>
+    <button onclick="goToResultPage()">결과 확인</button>
+</div>
+
+<script>
+    let playerName = '';
+    let selectedSeason = '';
+
+    function updatePlayerName() {
+        playerName = document.getElementById('playerName').value;
+        updateResult();
+    }
+
+    function selectSeason(season) {
+        selectedSeason = season;
+        updateResult();
+    }
+
+    function updateResult() {
+        if (playerName && selectedSeason) {
+            document.getElementById('selectedPlayer').textContent = playerName;
+            document.getElementById('selectedSeason').textContent = selectedSeason;
+            document.getElementById('result').style.display = 'block';
+        }
+    }
+
+    function goToResultPage() {
+        // 결과 페이지로 넘어가는 로직 (예시: 결과 페이지 URL로 이동)
+        const resultUrl = `result.html?player=${encodeURIComponent(playerName)}&season=${encodeURIComponent(selectedSeason)}`;
+        window.location.href = resultUrl; // 결과 페이지로 이동
+    }
+</script>
+</div>
+</body>
+</html>
