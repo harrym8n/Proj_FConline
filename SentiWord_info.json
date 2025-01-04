@@ -27705,6 +27705,11 @@
 	"polarity": "-1"
 },
 {
+	"word": "별로임",
+	"word_root": "별",
+	"polarity": "-1"
+},
+{
 	"word": "별스러울",
 	"word_root": "별",
 	"polarity": "-1"
@@ -74214,6 +74219,12 @@
 	"word_root": "알쏭달쏭",
 	"polarity": "-1"
 },
+
+
+
+
+
+
 {
 	"word": "쓰레기",
 	"word_root": "쓰레",
@@ -74232,6 +74243,86 @@
 {
 	"word": "사기",
 	"word_root": "사기",
+	"polarity": "2"
+},
+{
+	"word": "지리네",
+	"word_root": "지리",
+	"polarity": "2"
+},
+{
+	"word": "미쳤다",
+	"word_root": "미쳤",
+	"polarity": "2"
+},
+{
+	"word": "미쳤음",
+	"word_root": "미쳤",
+	"polarity": "2"
+},
+{
+	"word": "속가",
+	"word_root": "속가",
+	"polarity": "1"
+},
+{
+	"word": "빠름",
+	"word_root": "빠르",
+	"polarity": "1"
+},
+{
+	"word": "골결",
+	"word_root": "골결",
+	"polarity": "1"
+},
+{
+	"word": "골결정력",
+	"word_root": "골결",
+	"polarity": "1"
+},
+{
+	"word": "추천",
+	"word_root": "추천",
+	"polarity": "2"
+},
+{
+	"word": "체감 미쳤",
+	"word_root": "체감",
+	"polarity": "2"
+},
+{
+	"word": "체감 디짐",
+	"word_root": "체감",
+	"polarity": "2"
+},
+{
+	"word": "오짐",
+	"word_root": "오지",
+	"polarity": "2"
+},
+{
+	"word": "오진다",
+	"word_root": "오지",
+	"polarity": "2"
+},
+{
+	"word": "오져",
+	"word_root": "오지",
+	"polarity": "2"
+},
+{
+	"word": "오져버림",
+	"word_root": "오지",
+	"polarity": "2"
+},
+{
+	"word": "오졌다",
+	"word_root": "오지",
+	"polarity": "2"
+},
+{
+	"word": "오지는듯",
+	"word_root": "오지",
 	"polarity": "2"
 }
 ]
