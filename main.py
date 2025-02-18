@@ -3,9 +3,11 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
 import time
 import random
 from PIL import Image
+import io
 import numpy as np
 from wordcloud import WordCloud
 
@@ -18,57 +20,78 @@ st.write(
 )
 
 # 사용자 인풋 받기 - 선수 이름 입력
-player_name = st.text_input("🏅 평가가 궁금한 선수의 이름을 입력해주세요!", "")
+st.write("🏅 평가가 궁금한 선수의 이름을 입력해주세요!")
+player_name = st.text_input('이름 입력 후 Enter 클릭')
 
-# 시즌 아이콘 이미지 선택
-st.write("📅 어떤 시즌이 궁금하세요?")
-season_dict = {
-    "TOTY": "image/toty.png",
-    "TOTS": "tots.png",
-    "ICON": "icon.png",
-}
 
-# selected_season = None
-# cols = st.columns(len(season_dict))  # 시즌별 컬럼 생성
+save_folder = 'loge_image'
+files = [f for f in os.listdir(save_folder) if f.endswith('.png')] # 파일명 목록 가져오기
+season_dict = {os.path.splitext(f)[0]: f for f in files} # 사전 생성
+season_images = [f for f in os.listdir(save_folder) if f.endswith('.png')] # 'logo_image' 폴더 내의 모든 이미지 파일을 가져오기
+season_images_path = list(pd.Series(season_images).apply(lambda x : f'loge_image/{x}'))
 
-# for idx, (season, img_path) in enumerate(season_dict.items()):
-#     with cols[idx]:
-#         img = Image.open(img_path)
-#         if st.button(season):
-#             selected_season = season
+season_images_path.sort(key=lambda x: os.path.basename(x))  # 파일명만 기준으로 정렬
 
-# # 3️⃣ 분석 버튼 클릭 시 로딩 효과 및 결과 출력
-# if player_name and selected_season:
-#     with st.spinner("🔍 분석중입니다... 잠시만 기다려 주세요!"):
-#         time.sleep(2)  # 로딩 시간 (백엔드 실행 시 대체)
+# 2️⃣ 시즌 이미지 선택
+if player_name:
+    # 시즌 아이콘 이미지와 라디오 버튼을 나란히 배치
+    st.write("📅 어떤 시즌이 궁금하세요?")
+    
+    # 열을 나누어 이미지를 왼쪽에, 라디오 버튼을 오른쪽에 배치
+    cols = st.columns([3, 1])  # 3: 이미지, 1: 버튼
 
-#         # 선수 데이터 분석
-#         rating = 평점코드넣기  # 임의의 평점 생성 (예제 코드)
-#         recommendation = 추천여부넣기
+    with cols[0]:
+        # 각 시즌의 아이콘 이미지 출력 및 라디오 버튼 선택
+        selected_season = st.radio(
+            "시즌을 선택해주세요", 
+            list(season_dict.keys()), 
+            format_func=lambda x: f"{x} 시즌"
+        )
+        
+    with cols[1]:
+        # 선택된 시즌 이미지 경로로 이미지 불러오기
+        selected_image_path = season_dict[selected_season]
+        
+        # 이미지 파일을 BytesIO 객체로 읽기
+        with open(f'logo_image/{selected_image_path}', "rb") as img_file:
+            img_bytes = img_file.read()
+            img = Image.open(io.BytesIO(img_bytes))
+        
+        # 선택된 시즌 이미지 출력
+        st.image(img, caption=f"선택된 시즌: {selected_season}", use_container_width=True)
+    
+    # 선택된 시즌 이름 출력
+    st.write(f"선택된 시즌: {selected_season}")
 
-#         # 💡 감정 분석 결과 (워드 클라우드 생성)
-#         sample_text = "좋아요 최고 최악 별로 추천 훌륭함 대박 별로 좋은 선수 능력 좋음 매우 빠름 기대 이하"
-#         wordcloud = WordCloud(
-#             font_path=None, background_color="white", width=400, height=200
-#         ).generate(sample_text)
+else:
+    st.warning("⚠️ 선수를 먼저 입력해주세요!")
 
-#         # 결과 출력
-#         st.success(f"🎉 {player_name} ({selected_season}) 선수 분석 완료!")
 
-#         # 선수 평점
-#         st.subheader("📊 선수 평점")
-#         st.write(f"⭐ 평점: {rating} / 5.0")
+############################ 이미지 띄우는 코드 백업 ###############################
+# for i in range(0, len(season_images_path)):
+#     col = cols[i % 12]  # 열 번호를 20으로 나눈 나머지 값을 사용하여 열 선택
+#     with col:
+#         try:
+#             # 이미지 파일을 열고 BytesIO 객체로 변환
+#             with open(season_images_path[i], "rb") as f:
+#                 img_bytes = f.read()
+#                 img = Image.open(io.BytesIO(img_bytes))
+                
+#                 # 이미지를 st.image()로 출력
+#                 st.image(img_bytes, use_container_width=True)
+                
+#         except Exception as e:
+#             st.error(f"Error loading {season_images_path[i]}: {e}")
 
-#         # 감정 분석 결과 (워드 클라우드)
-#         st.subheader("💬 유저 리뷰 감정 분석 결과")
-#         fig, ax = plt.subplots()
-#         ax.imshow(wordcloud, interpolation="bilinear")
-#         ax.axis("off")
-#         st.pyplot(fig)
-
-#         # 추천 여부
-#         st.subheader("🧐 추천 정도")
-#         st.write(recommendation)
-
-# else:
-#     st.warning("⚠️ 선수 이름과 시즌을 선택해주세요!")
+#         # 각 이미지 간에 마진을 설정하는 방법
+#         st.markdown(
+#             f"""
+#             <style>
+#                 .stImage {{
+#                     margin: 5px;
+#                 }}
+#             </style>
+#             """, 
+#             unsafe_allow_html=True
+#         )
+############################ 이미지 띄우는 코드 백업 ###############################
